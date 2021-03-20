@@ -11,7 +11,9 @@
       title="Primary Alert"
       description="Primary Alert"
     />
-    <SwButton type="primary" block text/>
+    <SwButton type="primary" block>
+      Testing
+    </SwButton>
   </div>
   <div class="flex justify-center">
     <SwAlert type="primary" title="Primary Alert" description="Primary Alert" />
@@ -52,42 +54,42 @@
     </SwButton>
   </div>
   <div class="flex justify-center">
-    <SwButton type="primary" outlined>
+    <SwButton type="primary-outlined">
       Primary Outlined
     </SwButton>
-    <SwButton type="secondary" outlined>
+    <SwButton type="secondary-outlined">
       Secondary Outlined
     </SwButton>
-    <SwButton type="success" outlined>
+    <SwButton type="success-outlined">
       Success Outlined
     </SwButton>
-    <SwButton type="danger" outlined>
+    <SwButton type="danger-outlined">
       Danger Outlined
     </SwButton>
-    <SwButton type="info" outlined>
+    <SwButton type="info-outlined">
       Info Outlined
     </SwButton>
-    <SwButton type="warning" outlined>
+    <SwButton type="warning-outlined">
       Warning Outlined
     </SwButton>
   </div>
   <div class="flex justify-center">
-    <SwButton type="primary" text>
+    <SwButton type="primary-text">
       Primary Text
     </SwButton>
-    <SwButton type="secondary" text>
+    <SwButton type="secondary-text">
       Secondary Text
     </SwButton>
-    <SwButton type="success" text>
+    <SwButton type="success-text">
       Success Text
     </SwButton>
-    <SwButton type="danger" text>
+    <SwButton type="danger-text">
       Danger Text
     </SwButton>
-    <SwButton type="info" text>
+    <SwButton type="info-text">
       Info Text
     </SwButton>
-    <SwButton type="warning" text>
+    <SwButton type="warning-text">
       Warning Text
     </SwButton>
   </div>
