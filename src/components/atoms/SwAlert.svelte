@@ -1,39 +1,26 @@
 <script lang="ts">
-  type Type = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info'
-  export let type: Type = 'primary'
-  export let outlined: boolean  = false
+  type FilledType = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info'
+  type OutlinedType = 'primary-outlined' | 'secondary-outlined' | 'success-outlined' | 'danger-outlined' | 'warning-outlined' | 'info-outlined'
+  export let type: (FilledType | OutlinedType) = 'primary'
   export let title: string  = ''
   export let description: string  = ''
 
-  $: primary = type === 'primary' && !outlined
-  $: primaryOutlined = type === 'primary' && outlined
-  $: secondary = type === 'secondary' && !outlined
-  $: secondaryOutlined = type === 'secondary' && outlined
-  $: success = type === 'success' && !outlined
-  $: successOutlined = type === 'success' && outlined
-  $: danger = type === 'danger' && !outlined
-  $: dangerOutlined = type === 'danger' && outlined
-  $: warning = type === 'warning' && !outlined
-  $: warningOutlined = type === 'warning' && outlined
-  $: info = type === 'info' && !outlined
-  $: infoOutlined = type === 'info' && outlined
+  $: primary = type === 'primary'
+  $: primaryOutlined = type === 'primary-outlined'
+  $: secondary = type === 'secondary'
+  $: secondaryOutlined = type === 'secondary-outlined'
+  $: success = type === 'success'
+  $: successOutlined = type === 'success-outlined'
+  $: danger = type === 'danger'
+  $: dangerOutlined = type === 'danger-outlined'
+  $: warning = type === 'warning'
+  $: warningOutlined = type === 'warning-outlined'
+  $: info = type === 'info'
+  $: infoOutlined = type === 'info-outlined'
 </script>
 
 <div 
-  class="w-full p-3 m-1 rounded-l-md rounded-r-lg shadow-lg flex"
-  class:primary="{primary}"
-  class:primary-outlined="{primaryOutlined}"
-  class:secondary="{secondary}"
-  class:secondary-outlined="{secondaryOutlined}"
-  class:success="{success}"
-  class:success-outlined="{successOutlined}"
-  class:danger="{danger}"
-  class:danger-outlined="{dangerOutlined}"
-  class:warning="{warning}"
-  class:warning-outlined="{warningOutlined}"
-  class:info="{info}"
-  class:info-outlined="{infoOutlined}"
-  >
+  class="w-full p-3 m-1 rounded-md shadow-lg flex {type}">
   <!-- Shape -->
   <div 
     class="h-auto w-1 rounded-lg"
