@@ -6,7 +6,11 @@
 <main>
   <div class="text-lg font-semibold">Alert Component</div>
   <div class="w-56">
-    <SwAlert type="primary" title="Primary Alert" description="Primary Alert" />
+    <SwAlert
+      type="primary"
+      title="Primary Alert"
+      description="Primary Alert"
+    />
     <SwButton type="primary" block text/>
   </div>
   <div class="flex justify-center">
@@ -18,12 +22,12 @@
     <SwAlert type="warning" title="Warning Alert" description="Warning Alert" />
   </div>
   <div class="flex justify-center">
-    <SwAlert type="primary" outlined title="Primary Outlined" description="Primary Outlined" />
-    <SwAlert type="secondary" outlined title="Secondary Outlined" description="Secondary Outlined" />
-    <SwAlert type="success" outlined title="Success Outlined" description="Success Outlined" />
-    <SwAlert type="danger" outlined title="Danger Outlined" description="Danger Outlined" />
-    <SwAlert type="info" outlined title="Info Outlined" description="Info Outlined" />
-    <SwAlert type="warning" outlined title="Warning Outlined" description="Warning Outlined" />
+    <SwAlert type="primary-outlined" title="Primary Outlined" description="Primary Outlined" />
+    <SwAlert type="secondary-outlined" title="Secondary Outlined" description="Secondary Outlined" />
+    <SwAlert type="success-outlined" title="Success Outlined" description="Success Outlined" />
+    <SwAlert type="danger-outlined" title="Danger Outlined" description="Danger Outlined" />
+    <SwAlert type="info-outlined" title="Info Outlined" description="Info Outlined" />
+    <SwAlert type="warning-outlined" title="Warning Outlined" description="Warning Outlined" />
   </div>
   
   <div class="text-lg font-semibold">Button Component</div>
