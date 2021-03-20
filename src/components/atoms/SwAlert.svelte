@@ -55,36 +55,36 @@
     @apply bg-primary-200 text-primary-600;
   }
   .primary-outlined {
-    @apply border-2 border-primary-200 text-primary-600;
+    @apply ring-2 ring-primary-200 text-primary-600;
   }
   .secondary {
     @apply bg-secondary-200 text-secondary-600;
   }
   .secondary-outlined {
-    @apply border-2 border-secondary-200 text-secondary-600;
+    @apply ring-2 ring-secondary-200 text-secondary-600;
   }
   .success {
     @apply bg-success-200 text-success-600;
   }
   .success-outlined {
-    @apply border-2 border-success-200 text-success-600;
+    @apply ring-2 ring-success-200 text-success-600;
   }
   .danger {
     @apply bg-danger-200 text-danger-600;
   }
   .danger-outlined {
-    @apply border-2 border-danger-200 text-danger-600;
+    @apply ring-2 ring-danger-200 text-danger-600;
   }
   .info {
     @apply bg-info-200 text-info-600;
   }
   .info-outlined {
-    @apply border-2 border-info-200 text-info-600;
+    @apply ring-2 ring-info-200 text-info-600;
   }
   .warning {
     @apply bg-warning-200 text-warning-600;
   }
   .warning-outlined {
-    @apply border-2 border-warning-200 text-warning-600;
+    @apply ring-2 ring-warning-200 text-warning-600;
   }
 </style>
