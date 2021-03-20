@@ -1,53 +1,16 @@
 <script lang="ts">
-  type Type = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info'
-  export let type: Type = 'primary'
+  type FilledType = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info'
+  type OutlinedType = 'primary-outlined' | 'secondary-outlined' | 'success-outlined' | 'danger-outlined' | 'warning-outlined' | 'info-outlined'
+  type TextOnlyType = 'primary-text' | 'secondary-text' | 'success-text' | 'danger-text' | 'warning-text' | 'info-text'
+  export let type: (FilledType | OutlinedType | TextOnlyType) = 'primary'
   export let block: boolean  = false
-  export let text: boolean  = false
-  export let outlined: boolean  = false
   export let disabled: boolean  = false
-  
-  $: primary = type === 'primary' && !outlined && !text
-  $: primaryOutlined = type === 'primary' && outlined && !text
-  $: primaryText = type === 'primary' && !outlined && text
-  $: secondary = type === 'secondary' && !outlined && !text
-  $: secondaryOutlined = type === 'secondary' && outlined && !text
-  $: secondaryText = type === 'secondary' && !outlined && text
-  $: success = type === 'success' && !outlined && !text
-  $: successOutlined = type === 'success' && outlined && !text
-  $: successText = type === 'success' && !outlined && text
-  $: danger = type === 'danger' && !outlined && !text
-  $: dangerOutlined = type === 'danger' && outlined && !text
-  $: dangerText = type === 'danger' && !outlined && text
-  $: warning = type === 'warning' && !outlined && !text
-  $: warningOutlined = type === 'warning' && outlined && !text
-  $: warningText = type === 'warning' && !outlined && text
-  $: info = type === 'info' && !outlined && !text
-  $: infoOutlined = type === 'info' && outlined && !text
-  $: infoText = type === 'info' && !outlined && text
 </script>
 
 <button 
-  class="p-2 px-8 py-2 m-1 rounded-md shadow-lg"
+  class="p-2 px-8 py-2 m-1 rounded-md shadow-lg {type}"
   class:w-full="{block}"
   class:disabled="{disabled}"
-  class:primary="{primary}"
-  class:primary-outlined="{primaryOutlined}"
-  class:primary-text="{primaryText}"
-  class:secondary="{secondary}"
-  class:secondary-outlined="{secondaryOutlined}"
-  class:secondary-text="{secondaryText}"
-  class:success="{success}"
-  class:success-outlined="{successOutlined}"
-  class:success-text="{successText}"
-  class:danger="{danger}"
-  class:danger-outlined="{dangerOutlined}"
-  class:danger-text="{dangerText}"
-  class:warning="{warning}"
-  class:warning-outlined="{warningOutlined}"
-  class:warning-text="{warningText}"
-  class:info="{info}"
-  class:info-outlined="{infoOutlined}"
-  class:info-text="{infoText}"
   >
   <div class="font-semibold">
     <slot></slot>
