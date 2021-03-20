@@ -1,45 +1,57 @@
 <script lang="ts">
-  type FilledType = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info'
-  type OutlinedType = 'primary-outlined' | 'secondary-outlined' | 'success-outlined' | 'danger-outlined' | 'warning-outlined' | 'info-outlined'
-  export let type: (FilledType | OutlinedType) = 'primary'
+  type Type = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info'
+  export let type: Type = 'primary'
+  export let outlined: boolean  = false
   export let title: string  = ''
   export let description: string  = ''
+
+  $: primary = type === 'primary' && !outlined
+  $: primaryOutlined = type === 'primary' && outlined
+  $: secondary = type === 'secondary' && !outlined
+  $: secondaryOutlined = type === 'secondary' && outlined
+  $: success = type === 'success' && !outlined
+  $: successOutlined = type === 'success' && outlined
+  $: danger = type === 'danger' && !outlined
+  $: dangerOutlined = type === 'danger' && outlined
+  $: warning = type === 'warning' && !outlined
+  $: warningOutlined = type === 'warning' && outlined
+  $: info = type === 'info' && !outlined
+  $: infoOutlined = type === 'info' && outlined
 </script>
 
 <div 
   class="w-full p-3 m-1 rounded-l-md rounded-r-lg shadow-lg flex"
-  class:primary="{type === 'primary'}"
-  class:primary-outlined="{type === 'primary-outlined'}"
-  class:secondary="{type === 'secondary'}"
-  class:secondary-outlined="{type === 'secondary-outlined'}"
-  class:success="{type === 'success'}"
-  class:success-outlined="{type === 'success-outlined'}"
-  class:danger="{type === 'danger'}"
-  class:danger-outlined="{type === 'danger-outlined'}"
-  class:warning="{type === 'warning'}"
-  class:warning-outlined="{type === 'warning-outlined'}"
-  class:info="{type === 'info'}"
-  class:info-outlined="{type === 'info-outlined'}"
-  
+  class:primary="{primary}"
+  class:primary-outlined="{primaryOutlined}"
+  class:secondary="{secondary}"
+  class:secondary-outlined="{secondaryOutlined}"
+  class:success="{success}"
+  class:success-outlined="{successOutlined}"
+  class:danger="{danger}"
+  class:danger-outlined="{dangerOutlined}"
+  class:warning="{warning}"
+  class:warning-outlined="{warningOutlined}"
+  class:info="{info}"
+  class:info-outlined="{infoOutlined}"
   >
   <!-- Shape -->
   <div 
     class="h-auto w-1 rounded-lg"
-    class:bg-primary-600="{type === 'primary' || type === 'primary-outlined' }"
-    class:bg-secondary-600="{type === 'secondary' || type === 'secondary-outlined' }"
-    class:bg-success-600="{type === 'success' || type === 'success-outlined' }"
-    class:bg-danger-600="{type === 'danger' || type === 'danger-outlined' }"
-    class:bg-warning-600="{type === 'warning' || type === 'warning-outlined' }"
-    class:bg-info-600="{type === 'info' || type === 'info-outlined' }">
+    class:bg-primary-600="{primary || primaryOutlined}"
+    class:bg-secondary-600="{secondary || secondaryOutlined}"
+    class:bg-success-600="{success || successOutlined}"
+    class:bg-danger-600="{danger || dangerOutlined}"
+    class:bg-warning-600="{warning || warningOutlined}"
+    class:bg-info-600="{info || infoOutlined}">
   </div>
   <div 
     class="pl-3"
-    class:text-primary-600="{type === 'primary' || type === 'primary-outlined' }"
-    class:text-secondary-600="{type === 'secondary' || type === 'secondary-outlined' }"
-    class:text-success-600="{type === 'success' || type === 'success-outlined' }"
-    class:text-danger-600="{type === 'danger' || type === 'danger-outlined' }"
-    class:text-warning-600="{type === 'warning' || type === 'warning-outlined' }"
-    class:text-info-600="{type === 'info' || type === 'info-outlined' }"
+    class:text-primary-600="{primary || primaryOutlined}"
+    class:text-secondary-600="{secondary || secondaryOutlined}"
+    class:text-success-600="{success || successOutlined}"
+    class:text-danger-600="{danger || dangerOutlined}"
+    class:text-warning-600="{warning || warningOutlined}"
+    class:text-info-600="{info || infoOutlined }"
     >
     <div class="font-semibold">
       { title }
