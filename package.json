@@ -4,18 +4,28 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
+    "@storybook/svelte": "^6.1.21",
     "@svitejs/vite-plugin-svelte": "^0.11.1",
-    "svelte": "^3.35.0",
-    "svelte-preprocess": "^4.6.9",
-    "typescript": "^4.2.3",
-    "vite": "^2.1.0",
     "autoprefixer": "^10.2.5",
+    "babel-loader": "^8.2.2",
     "cssnano": "^4.1.10",
     "postcss": "^8.2.7",
     "postcss-load-config": "^3.0.1",
-    "tailwindcss": "^2.0.3"
-  }
+    "svelte": "^3.35.0",
+    "svelte-loader": "^3.0.0",
+    "svelte-preprocess": "^4.6.9",
+    "tailwindcss": "^2.0.3",
+    "typescript": "^4.2.3",
+    "vite": "^2.1.0"
+  },
+  "dependencies": {}
 }
