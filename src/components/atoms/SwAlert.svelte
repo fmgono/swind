@@ -67,7 +67,7 @@
   </div>
   <div class="flex items-center">
     {#if (showIcon)}
-    <Icon src="{icon ? icon : defaultIcon}" solid size="24" />
+    <Icon src="{icon ? icon : defaultIcon}" size="24" />
     {/if}
     <div
       class="ml-2"
