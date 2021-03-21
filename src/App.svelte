@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { Check } from 'svelte-hero-icons'
   import SwAlert from './components/atoms/SwAlert.svelte'
   import SwButton from './components/atoms/SwButton.svelte'
 </script>
@@ -10,31 +11,36 @@
       type="primary"
       title="Primary Alert"
       description="Primary Alert"
+      showIcon
+      icon={Check}
     />
-    <SwButton type="primary" block>
+    <SwButton type="primary" block iconPrefix="{Check}" loading>
+      Testing
+    </SwButton>
+    <SwButton type="primary" block iconSuffix="{Check}" disabled>
       Testing
     </SwButton>
   </div>
   <div class="flex justify-center">
-    <SwAlert type="primary" title="Primary Alert" description="Primary Alert" />
-    <SwAlert type="secondary" title="Secondary Alert" description="Secondary Alert" />
-    <SwAlert type="success" title="Success Alert" description="Success Alert" />
-    <SwAlert type="danger" title="Danger Alert" description="Danger Alert" />
-    <SwAlert type="info" title="Info Alert" description="Info Alert" />
-    <SwAlert type="warning" title="Warning Alert" description="Warning Alert" />
+    <SwAlert type="primary" title="Primary Alert" description="Primary Alert" showIcon />
+    <SwAlert type="secondary" title="Secondary Alert" description="Secondary Alert" showIcon />
+    <SwAlert type="success" title="Success Alert" description="Success Alert" showIcon />
+    <SwAlert type="danger" title="Danger Alert" description="Danger Alert" showIcon />
+    <SwAlert type="info" title="Info Alert" description="Info Alert" showIcon />
+    <SwAlert type="warning" title="Warning Alert" description="Warning Alert" showIcon />
   </div>
   <div class="flex justify-center">
-    <SwAlert type="primary-outlined" title="Primary Outlined" description="Primary Outlined" />
-    <SwAlert type="secondary-outlined" title="Secondary Outlined" description="Secondary Outlined" />
-    <SwAlert type="success-outlined" title="Success Outlined" description="Success Outlined" />
-    <SwAlert type="danger-outlined" title="Danger Outlined" description="Danger Outlined" />
-    <SwAlert type="info-outlined" title="Info Outlined" description="Info Outlined" />
-    <SwAlert type="warning-outlined" title="Warning Outlined" description="Warning Outlined" />
+    <SwAlert type="primary-outlined" title="Primary Outlined" description="Primary Outlined" showIcon />
+    <SwAlert type="secondary-outlined" title="Secondary Outlined" description="Secondary Outlined" showIcon />
+    <SwAlert type="success-outlined" title="Success Outlined" description="Success Outlined" showIcon />
+    <SwAlert type="danger-outlined" title="Danger Outlined" description="Danger Outlined" showIcon />
+    <SwAlert type="info-outlined" title="Info Outlined" description="Info Outlined" showIcon />
+    <SwAlert type="warning-outlined" title="Warning Outlined" description="Warning Outlined" showIcon />
   </div>
   
   <div class="text-lg font-semibold">Button Component</div>
   <div class="flex justify-center">
-    <SwButton type="primary">
+    <SwButton type="primary" iconPrefix={Check}>
       Primary
     </SwButton>
     <SwButton type="secondary">
@@ -54,7 +60,7 @@
     </SwButton>
   </div>
   <div class="flex justify-center">
-    <SwButton type="primary-outlined">
+    <SwButton type="primary-outlined" iconPrefix={Check}>
       Primary Outlined
     </SwButton>
     <SwButton type="secondary-outlined">
@@ -74,7 +80,7 @@
     </SwButton>
   </div>
   <div class="flex justify-center">
-    <SwButton type="primary-text">
+    <SwButton type="primary-text" iconPrefix={Check}>
       Primary Text
     </SwButton>
     <SwButton type="secondary-text">
