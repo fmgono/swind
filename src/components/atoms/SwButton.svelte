@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { SvelteComponentTyped } from "svelte"
   // import Icon and default loading icon
   import Icon, { Refresh } from 'svelte-hero-icons'
 
@@ -20,11 +21,11 @@
   /**
    * Place icon before text / content
    */
-  export let iconPrefix: any = undefined
+  export let iconPrefix: SvelteComponentTyped = undefined
   /**
    * Place icon after text / content
    */
-  export let iconSuffix: any = undefined
+  export let iconSuffix: SvelteComponentTyped = undefined
   /**
    * Add loading style
    */
