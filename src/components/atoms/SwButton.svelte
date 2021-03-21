@@ -1,25 +1,63 @@
 <script lang="ts">
+  // import Icon and default loading icon
+  import Icon, { Refresh } from 'svelte-hero-icons'
+
   type FilledType = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info'
   type OutlinedType = 'primary-outlined' | 'secondary-outlined' | 'success-outlined' | 'danger-outlined' | 'warning-outlined' | 'info-outlined'
   type TextOnlyType = 'primary-text' | 'secondary-text' | 'success-text' | 'danger-text' | 'warning-text' | 'info-text'
+  /**
+   * Type of button style
+   */
   export let type: (FilledType | OutlinedType | TextOnlyType) = 'primary'
+  /**
+   * is button width fit in an entire container or not
+   */
   export let block: boolean  = false
+  /**
+   * Add disabled style
+   */
   export let disabled: boolean  = false
+  /**
+   * Place icon before text / content
+   */
+  export let iconPrefix: any = undefined
+  /**
+   * Place icon after text / content
+   */
+  export let iconSuffix: any = undefined
+  /**
+   * Add loading style
+   */
+  export let loading: boolean  = false
+
+  $: iconPrefix = loading ? Refresh : iconPrefix
 </script>
 
 <button 
-  class="p-2 px-8 py-2 m-1 rounded-md shadow-lg {type}"
+  class="p-2 px-8 py-2 m-1 rounded-md shadow-lg flex justify-center items-center  {type} focus:outline-none focus:shadow-2xl"
+  class:loading="{loading}"
   class:w-full="{block}"
   class:disabled="{disabled}"
   >
-  <div class="font-semibold">
-    <slot></slot>
-  </div>
+    {#if iconPrefix}
+    <Icon src="{iconPrefix}" size="20" class="{loading && 'animate-spin-reverse'}" />
+    {/if}
+    
+    <div class="font-semibold">
+       <slot></slot>
+    </div>
+
+    {#if iconSuffix}
+    <Icon src="{iconSuffix}" size="20" class="{loading ? 'animate-spin-reverse' : null}" />
+    {/if}
 </button>
 
 <style>
   .text {
     @apply shadow-none bg-transparent ring-0;
+  }
+  .loading {
+    @apply opacity-75 cursor-wait ;
   }
   .disabled {
     @apply ring-0 bg-gray-300 text-white cursor-not-allowed !important;
