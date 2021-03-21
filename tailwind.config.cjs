@@ -25,7 +25,16 @@ module.exports = {
 				danger: colors.red,
 				info: colors.purple,
 				warning: colors.yellow,
-			}
+			},
+			keyframes: {
+				'spin-reverse': {
+					from: { transform: 'rotate(360deg)' },
+					to: { transform: 'rotate(0deg)' },
+				}
+			},
+			animation: {
+				'spin-reverse': 'spin-reverse 1s linear infinite',
+			},
 		},
 	},
 	variants: {
