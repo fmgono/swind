@@ -4,6 +4,7 @@ const colors = require('tailwindcss/colors')
 module.exports = {
 	purge: {
 		content: [
+			"./public/**/*.html",
 			"./src/**/*.{html,js,svelte,ts}",
 		],
 		options: {
@@ -39,7 +40,8 @@ module.exports = {
 	},
 	variants: {
 		extend: {
-			ringWidth: ['hover']
+			ringWidth: ['hover'],
+			borderWidth: ['hover']
 		},
 	},
 	plugins: [],
