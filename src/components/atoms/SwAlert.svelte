@@ -53,7 +53,8 @@
   $: infoOutlined = type === 'info-outlined'
 </script>
 
-<div 
+<div
+  role="alert"
   class="w-full p-3 m-1 rounded-md shadow-lg flex {type}">
   <!-- Shape -->
   <div 
