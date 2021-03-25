@@ -136,6 +136,12 @@
   export let borderWidth: string = ''
   
   /**
+   * @remark for border color of an element, you can px if you want
+   * @link for details, read more at https://tailwindcss.com/docs/border-color
+   */
+  export let borderColor: string = ''
+  
+  /**
    * @remark for border width of an element, you can px if you want
    * @link for details, read more at https://tailwindcss.com/docs/border-width
    */
@@ -199,12 +205,13 @@
   $: sizing = `${width} ${minWidth} ${maxWidth} ${height} ${minHeight} ${maxHeight}`
 
   // Border
+  $: borderColor = borderColor && ( borderColor.includes('#') ? `border-[${borderColor}]` : `border-${borderColor}`)
   $: borderWidth = borderWidth && ( borderWidth.includes('px') ? `border-[${borderWidth}]` : `border-${borderWidth}`)
   $: borderTopWidth = borderTopWidth && ( borderTopWidth.includes('px') ? `border-t-[${borderTopWidth}]` : `border-t-${borderTopWidth}`)
   $: borderRightWidth = borderRightWidth && ( borderRightWidth.includes('px') ? `border-r-[${borderRightWidth}]` : `border-r-${borderRightWidth}`)
   $: borderBottomWidth = borderBottomWidth && ( borderBottomWidth.includes('px') ? `border-b-[${borderBottomWidth}]` : `border-b-${borderBottomWidth}`)
   $: borderLeftWidth = borderLeftWidth && ( borderLeftWidth.includes('px') ? `border-l-[${borderLeftWidth}]` : `border-l-${borderLeftWidth}`)
-  $: borders = `${borderWidth} ${borderTopWidth} ${borderRightWidth} ${borderBottomWidth} ${borderLeftWidth}`
+  $: borders = `${borderWidth} ${borderTopWidth} ${borderRightWidth} ${borderBottomWidth} ${borderLeftWidth} ${borderColor}`
 </script>
 
 <div class="{spacing} {textColor} {backgroundColor} {opacities} {sizing} {borders} {display}">
