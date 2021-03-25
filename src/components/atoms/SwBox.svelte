@@ -11,11 +11,15 @@
   type borderRadiusType = 'none' |'sm' |'md' |'lg' |'xl' |'2xl' |'3xl' |'full' | (string & {})
   type DisplayType = 'block' | 'inline-block' | 'inline' | 'flex' | 'inline-flex' | 'table' | 'table-caption' | 'table-cell' | 'table-column' | 'table-column-group' | 'table-footer-group' | 'table-header-group' | 'table-row-group' | 'table-row' | 'flow-root' | 'grid' | 'inline-grid' | 'contents' | 'hidden' | (string & {})
   type FlexDirectionType = 'row' | 'row-reverse' | 'col' | 'col-reverse'
+  type JustifyContentType = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly'
+  type JustifyItemsType = 'auto' | 'start' | 'end' | 'center' | 'stretch'
+  type AlignContentType = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly'
+  type AlignItemsType = 'start' | 'end' | 'center' | 'baseline' | 'stretch'
   type FlexWrapType = 'wrap' | 'wrap-reverse' | 'nowrap'
   type FlexType = '1' | 'auto' | 'initial' | 'none'
   type FlexGrowType = '0' | '' | (string & {})
   type FlexShrinkType = '0' | '' | (string & {})
-  type FlexOrderType = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | 'first'
+  type FlexOrderType = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | 'first' | 'last' | 'none'
   
   /**
    * @remark if you select the value is 1, then it will generated string class tailwind .m-1
@@ -209,6 +213,12 @@
    * @link for details, read more at https://tailwindcss.com/docs/display
    */
    export let display:DisplayType = 'block'
+  
+   /**
+   * @remark display type
+   * @link for details, read more at https://tailwindcss.com/docs/display
+   */
+   export let flexDir:FlexDirectionType = 'row'
 
   // Spacing
   $: padding = p && (p.includes('px') ? `p-[${p}]` : `p-${p}`)
