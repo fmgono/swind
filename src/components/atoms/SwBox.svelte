@@ -1,6 +1,5 @@
 <script lang="ts">
   type SpacingType = 'auto' | '0' | '0.5' | '1' | '1.5' | '2' | '2.5' | '3' | '3.5' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | '14' | '16' | '20' | '24' | '28' | '32' | '36' | '40' | '44' | '48' | '52' | '56' | '60' | '64' | '72' | '80' | '96' | (string & {})
-  type DisplayType = 'block' | 'inline-block' | 'inline' | 'flex' | 'inline-flex' | 'table' | 'table-caption' | 'table-cell' | 'table-column' | 'table-column-group' | 'table-footer-group' | 'table-header-group' | 'table-row-group' | 'table-row' | 'flow-root' | 'grid' | 'inline-grid' | 'contents' | 'hidden' | (string & {})
   type ColorType = 'primary-lightest' | 'primary-light' | 'primary' | 'primary-dark' | 'secondary-lightest' | 'secondary-light' | 'secondary' | 'secondary-dark' | 'success-lightest' | 'success-light' | 'success' | 'success-dark' | 'danger-lightest' | 'danger-light' | 'danger' | 'danger-dark' | 'info-lightest' | 'info-light' | 'info' | 'info-dark' | 'warning-lightest' | 'warning-light' | 'warning' | 'warning-dark' | 'blue-lightest' | 'blue-light' | 'blue' | 'blue-dark' | 'indigo-lightest' | 'indigo-light' | 'indigo' | 'indigo-dark' | 'green-lightest' | 'green-light' | 'green' | 'green-dark' | 'red-lightest' | 'red-light' | 'red' | 'red-dark' | 'purple-lightest' | 'purple-light' | 'purple' | 'purple-dark' | 'yellow-lightest' | 'yellow-light' | 'yellow' | 'yellow-dark' | 'orange-lightest' | 'orange-light' | 'orange' | 'orange-dark' | 'gray-lightest' | 'gray-light' | 'gray' | 'gray-dark' | (string & {})
   type OpacityType = '0' | '5' | '10' | '20' | '25' | '30' | '40' | '50' | '60' | '70' | '75' | '80' | '90' | '95' | '100' | (string & {})
   type WidthHeightType = '0' | '0.5' | '1' | '1.5' | '2' | '2.5' | '3' | '3.5' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | '14' | '16' | '20' | '24' | '28' | '32' | '36' | '40' | '44' | '48' | '52' | '56' | '60' | '64' | '72' | '80' | '96' | 'auto' | 'px' | '1/2' | '1/3' | '2/3' | '1/4' | '2/4' | '3/4' | '1/5' | '2/5' | '3/5' | '4/5' | '1/6' | '2/6' | '3/6' | '4/6' | '5/6' | '1/12' | '2/12' | '3/12' | '4/12' | '5/12' | '6/12' | '7/12' | '8/12' | '9/12' | '10/12' | '11/12' | 'full' | 'screen' | 'min' | 'max' | (string & {})
@@ -10,6 +9,13 @@
   type maxHeightType = '0' | '0.5' | '1' | '1.5' | '2' | '2.5' | '3' | '3.5' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | '14' | '16' | '20' | '24' | '28' | '32' | '36' | '40' | '44' | '48' | '52' | '56' | '60' | '64' | '72' | '80' | '96' | 'px' | 'full' | 'screen' | (string & {})
   type borderWidthType = '0' | '2' | '4' | '8' | (string & {})
   type borderRadiusType = 'none' |'sm' |'md' |'lg' |'xl' |'2xl' |'3xl' |'full' | (string & {})
+  type DisplayType = 'block' | 'inline-block' | 'inline' | 'flex' | 'inline-flex' | 'table' | 'table-caption' | 'table-cell' | 'table-column' | 'table-column-group' | 'table-footer-group' | 'table-header-group' | 'table-row-group' | 'table-row' | 'flow-root' | 'grid' | 'inline-grid' | 'contents' | 'hidden' | (string & {})
+  type FlexDirectionType = 'row' | 'row-reverse' | 'col' | 'col-reverse'
+  type FlexWrapType = 'wrap' | 'wrap-reverse' | 'nowrap'
+  type FlexType = '1' | 'auto' | 'initial' | 'none'
+  type FlexGrowType = '0' | '' | (string & {})
+  type FlexShrinkType = '0' | '' | (string & {})
+  type FlexOrderType = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | 'first'
   
   /**
    * @remark if you select the value is 1, then it will generated string class tailwind .m-1
