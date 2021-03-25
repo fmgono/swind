@@ -5,10 +5,10 @@ module.exports = {
 	// for more information about preprocessors
 	preprocess: [
 		sveltePreprocess({
-			defaults: {
-				style: "postcss",
-			},
-			postcss: true
+			// defaults: {
+			// 	style: "postcss",
+			// },
+			// postcss: true
 		}),
 	]
 }

@@ -29,6 +29,7 @@
     "vite": "^2.1.0"
   },
   "dependencies": {
-    "svelte-hero-icons": "^2.0.0"
+    "svelte-hero-icons": "^2.0.0",
+    "twind": "^0.16.9"
   }
 }
