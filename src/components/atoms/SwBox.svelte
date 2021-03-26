@@ -9,6 +9,7 @@
   type maxHeightType = '0' | '0.5' | '1' | '1.5' | '2' | '2.5' | '3' | '3.5' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | '14' | '16' | '20' | '24' | '28' | '32' | '36' | '40' | '44' | '48' | '52' | '56' | '60' | '64' | '72' | '80' | '96' | 'px' | 'full' | 'screen' | (string & {})
   type borderWidthType = '0' | '2' | '4' | '8' | (string & {})
   type borderRadiusType = 'none' |'sm' |'md' |'lg' |'xl' |'2xl' |'3xl' |'full' | (string & {})
+  type shadowType = '' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'inner' | 'none'
   type DisplayType = 'block' | 'inline-block' | 'inline' | 'flex' | 'inline-flex' | 'table' | 'table-caption' | 'table-cell' | 'table-column' | 'table-column-group' | 'table-footer-group' | 'table-header-group' | 'table-row-group' | 'table-row' | 'flow-root' | 'grid' | 'inline-grid' | 'contents' | 'hidden' | (string & {})
   type FlexDirectionType = 'row' | 'row-reverse' | 'col' | 'col-reverse' | (string & {})
   type justifyType = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly' | (string & {})
@@ -209,6 +210,12 @@
   export let borderLeftRadius: borderRadiusType = ''
   
   /**
+   * @remark for border width of an element, you can px if you want
+   * @link for details, read more at https://tailwindcss.com/docs/border-width
+   */
+  export let shadow: shadowType = ''
+  
+  /**
    * @remark display type
    * @link for details, read more at https://tailwindcss.com/docs/display
    */
@@ -302,6 +309,9 @@
   $: borderLeftRadius = borderLeftRadius && ( borderLeftRadius.includes('px') ? `rounded-l-[${borderLeftRadius}]` : `rounded-l-${borderLeftRadius}`)
   $: borders = `${borderWidth} ${borderTopWidth} ${borderRightWidth} ${borderBottomWidth} ${borderLeftWidth} ${borderRadius} ${borderTopRadius} ${borderRightRadius} ${borderBottomRadius} ${borderLeftRadius} ${borderColor}`
 
+  // Shadow
+  $: boxShadow = shadow && `shadow-${shadow}`
+
   // Flex
   $: justify = (display === 'flex' || display === 'inline-flex') && `justify-${justify}`
   $: align = (display === 'flex' || display === 'inline-flex') && `align-${align}`
@@ -311,14 +321,14 @@
 
   // Advanced style with class
   $: className = className && className
-  $: smClassName = smClassName && ``
-  $: mdClassName = mdClassName && mdClassName
-  $: lgClassName = lgClassName && lgClassName
-  $: hoverClassName = hoverClassName && hoverClassName
-  $: activeClassName = activeClassName && activeClassName
+  $: smClassName = smClassName && `sm:(${smClassName})`
+  $: mdClassName = mdClassName && `md:(${mdClassName})`
+  $: lgClassName = lgClassName && `lg:(${lgClassName})`
+  $: hoverClassName = hoverClassName && `hover:(${hoverClassName})`
+  $: activeClassName = activeClassName && `active:(${activeClassName})`
   $: classes = `${smClassName} ${className} ${mdClassName} ${lgClassName} ${hoverClassName} ${activeClassName}`
 </script>
 
-<div {...$$restProps} class="{spacing} {textColor} {backgroundColor} {opacities} {sizing} {borders} {display} {flex} {classes}">
+<div {...$$restProps} class="{spacing} {textColor} {backgroundColor} {opacities} {sizing} {borders} {boxShadow} {display} {flex} {classes}">
   <slot></slot>
 </div>
