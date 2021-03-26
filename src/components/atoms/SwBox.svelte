@@ -394,14 +394,14 @@
   $: boxShadow = shadow && `shadow-${shadow}`
 
   // Flex
-  $: direction = (display === 'flex' || display === 'inline-flex') && `flex-${flexDir}`
-  $: wrap = (display === 'flex' || display === 'inline-flex') && `flex-${flexWrap}`
-  $: growShrink = (display === 'flex' || display === 'inline-flex') && `flex-${flex}`
-  $: order = (display === 'flex' || display === 'inline-flex') && `order-${flexOrder}`
-  $: justify = (display === 'flex' || display === 'inline-flex') && `justify-${justify}`
-  $: justifyItems = (display === 'flex' || display === 'inline-flex') && `justify-items-${justify}`
-  $: align = (display === 'flex' || display === 'inline-flex') && `items-${align}`
-  $: alignContent = (display === 'flex' || display === 'inline-flex') && `content-${alignContent}`
+  $: direction = (display === 'flex' || display === 'inline-flex') && flexDir && `flex-${flexDir}`
+  $: wrap = (display === 'flex' || display === 'inline-flex') && flexWrap && `flex-${flexWrap}`
+  $: growShrink = (display === 'flex' || display === 'inline-flex') && flex && `flex-${flex}`
+  $: order = (display === 'flex' || display === 'inline-flex') && flexOrder && `order-${flexOrder}`
+  $: justify = (display === 'flex' || display === 'inline-flex') && justify && `justify-${justify}`
+  $: justifyItems = (display === 'flex' || display === 'inline-flex') && justify && `justify-items-${justify}`
+  $: align = (display === 'flex' || display === 'inline-flex') && align && `items-${align}`
+  $: alignContent = (display === 'flex' || display === 'inline-flex') && alignContent && `content-${alignContent}`
   $: flexs = `${direction} ${wrap} ${growShrink} ${order} ${justify} ${justifyItems} ${align} ${alignContent}`
 
   // Advanced style with class
