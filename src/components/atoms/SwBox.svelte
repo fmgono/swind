@@ -7,6 +7,8 @@
   type maxWidthType = '0' | 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | 'full' | 'min' | 'max' | 'prose' | 'screen-sm' | 'screen-md' | 'screen-lg' | 'screen-xl' | 'screen-2xl' | (string & {})
   type minHeightType = '0' | 'full' | 'screen' | (string & {})
   type maxHeightType = '0' | '0.5' | '1' | '1.5' | '2' | '2.5' | '3' | '3.5' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | '14' | '16' | '20' | '24' | '28' | '32' | '36' | '40' | '44' | '48' | '52' | '56' | '60' | '64' | '72' | '80' | '96' | 'px' | 'full' | 'screen' | (string & {})
+  type verticalAlignType = 'baseline' | 'top' | 'middle' | 'bottom' | 'text' | 'text-bottom'
+  type OverflowType = 'auto' | 'hidden' | 'visible' | 'scroll'
   type borderWidthType = '0' | '2' | '4' | '8' | (string & {})
   type borderRadiusType = 'none' |'sm' |'md' |'lg' |'xl' |'2xl' |'3xl' |'full' | (string & {})
   type shadowType = '' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'inner' | 'none'
@@ -142,6 +144,30 @@
    * @link for details, read more at https://tailwindcss.com/docs/max-height
    */
   export let maxH: maxHeightType = ''
+  
+  /**
+   * @remark for setting vertical align of an element
+   * @link for details, read more at https://tailwindcss.com/docs/vertical-align
+   */
+  export let verticalAlign: verticalAlignType = 'baseline'
+  
+  /**
+   * @remark for setting overflow of an element
+   * @link for details, read more at https://tailwindcss.com/docs/vertical-align
+   */
+  export let overflow: OverflowType = 'auto'
+  
+  /**
+   * @remark for setting overflow Y of an element
+   * @link for details, read more at https://tailwindcss.com/docs/vertical-align
+   */
+  export let overflowY: OverflowType = 'auto'
+  
+  /**
+   * @remark for setting overflow X of an element
+   * @link for details, read more at https://tailwindcss.com/docs/vertical-align
+   */
+  export let overflowX: OverflowType = 'auto'
   
   /**
    * @remark for border color of an element, you can px if you want
@@ -343,7 +369,11 @@
   $: height = h && ( h.includes('px') ? `h-[${h}]` : `h-${h}`)
   $: minHeight = minH && ( minH.includes('px') ? `min-h-[${minHeight}]` : `min-h-${minH}`)
   $: maxHeight = maxH && ( maxH.includes('px') ? `max-h-[${maxHeight}]` : `max-h-${maxH}`)
-  $: sizing = `${width} ${minWidth} ${maxWidth} ${height} ${minHeight} ${maxHeight}`
+  $: verticalAligns = `align-${verticalAlign}`
+  $: flows = `overflow-${overflow}`
+  $: flowX = `overflow-x-${overflowX}`
+  $: flowY = `overflow-y-${overflowY}`
+  $: sizing = `${width} ${minWidth} ${maxWidth} ${height} ${minHeight} ${maxHeight} ${verticalAligns} ${flows} ${flowX} ${flowY}`
 
   // Border
   $: borderWidth = borderWidth && ( borderWidth.includes('px') ? `border-[${borderWidth}]` : `border-${borderWidth}`)
