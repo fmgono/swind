@@ -1,17 +1,25 @@
 <script lang="ts">
-  import { Check } from 'svelte-hero-icons'
-  import SwAlert from './components/atoms/SwAlert.svelte'
+  // import { Check } from 'svelte-hero-icons'
+  // import SwAlert from './components/atoms/SwAlert.svelte'
   import SwBox from './components/atoms/SwBox.svelte'
-  import SwButton from './components/atoms/SwButton.svelte'
+  // import SwButton from './components/atoms/SwButton.svelte'
 </script>
 
-<main>
+<main class="bg-gray-100 min-h-screen">
   <div class="">Box Component</div>
+
   <div class="text-base font-semibold text-primary-light">Box Component</div>
-  <SwBox p="8px" m="3" w="1/2" borderTopWidth="1px"borderRightWidth="2px" borderLeftWidth="5px" borderBottomWidth="6px" >
-    Test
+  <SwBox
+    display="flex"
+    justify="center"
+    >
+      <SwBox borderRadius="lg" shadow="" p="4" bgColor="white" >
+
+        <h3 class="font-semibold text-2xl">How We Build Swind UI</h3>
+        First thing first
+      </SwBox>
   </SwBox>
-  <div class="w-56">
+  <!-- <div class="w-56"> -->
     <!-- <SwAlert
       type="primary"
       title="Primary Alert"
@@ -25,7 +33,7 @@
     <!-- <SwButton type="primary" block iconSuffix="{Check}" disabled>
       Testing
     </SwButton> -->
-  </div>
+  <!-- </div> -->
   <!-- <div class="flex justify-center">
     <SwAlert type="primary" title="Primary Alert" description="Primary Alert" showIcon />
     <SwAlert type="secondary" title="Secondary Alert" description="Secondary Alert" showIcon />
