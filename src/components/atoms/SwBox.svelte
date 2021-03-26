@@ -7,22 +7,22 @@
   type maxWidthType = '0' | 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | 'full' | 'min' | 'max' | 'prose' | 'screen-sm' | 'screen-md' | 'screen-lg' | 'screen-xl' | 'screen-2xl' | (string & {})
   type minHeightType = '0' | 'full' | 'screen' | (string & {})
   type maxHeightType = '0' | '0.5' | '1' | '1.5' | '2' | '2.5' | '3' | '3.5' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | '14' | '16' | '20' | '24' | '28' | '32' | '36' | '40' | '44' | '48' | '52' | '56' | '60' | '64' | '72' | '80' | '96' | 'px' | 'full' | 'screen' | (string & {})
-  type verticalAlignType = 'baseline' | 'top' | 'middle' | 'bottom' | 'text' | 'text-bottom'
-  type OverflowType = 'auto' | 'hidden' | 'visible' | 'scroll'
+  type verticalAlignType = 'baseline' | 'top' | 'middle' | 'bottom' | 'text' | 'text-bottom' | (string & {})
+  type OverflowType = 'auto' | 'hidden' | 'visible' | 'scroll' | (string & {})
   type borderWidthType = '0' | '2' | '4' | '8' | (string & {})
   type borderRadiusType = 'none' |'sm' |'md' |'lg' |'xl' |'2xl' |'3xl' |'full' | (string & {})
   type shadowType = '' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'inner' | 'none'
   type DisplayType = 'block' | 'inline-block' | 'inline' | 'flex' | 'inline-flex' | 'table' | 'table-caption' | 'table-cell' | 'table-column' | 'table-column-group' | 'table-footer-group' | 'table-header-group' | 'table-row-group' | 'table-row' | 'flow-root' | 'grid' | 'inline-grid' | 'contents' | 'hidden' | (string & {})
-  type FlexDirectionType = 'row' | 'row-reverse' | 'col' | 'col-reverse' | (string & {})
+  type FlexDirectionType = 'row' | 'row-reverse' | 'col' | 'col-reverse' | (string & {}) | (string & {})
   type justifyType = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly' | (string & {})
   type JustifyItemsType = 'auto' | 'start' | 'end' | 'center' | 'stretch' | (string & {})
   type AlignContentType = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly' | (string & {})
   type alignType = 'start' | 'end' | 'center' | 'baseline' | 'stretch' | (string & {})
-  type FlexWrapType = 'wrap' | 'wrap-reverse' | 'nowrap'
-  type FlexType = '1' | 'auto' | 'initial' | 'none'
+  type FlexWrapType = 'wrap' | 'wrap-reverse' | 'nowrap' | (string & {})
+  type FlexType = '1' | 'auto' | 'initial' | 'none' | (string & {})
   // type FlexGrowType = '0' | '' | (string & {})
   // type FlexShrinkType = '0' | '' | (string & {})
-  type FlexOrderType = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | 'first' | 'last' | 'none'
+  type FlexOrderType = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | 'first' | 'last' | 'none' | (string & {})
   
   /**
    * @remark if you select the value is 1, then it will generated string class tailwind .m-1
@@ -149,25 +149,25 @@
    * @remark for setting vertical align of an element
    * @link for details, read more at https://tailwindcss.com/docs/vertical-align
    */
-  export let verticalAlign: verticalAlignType = 'baseline'
+  export let verticalAlign: verticalAlignType = ''
   
   /**
    * @remark for setting overflow of an element
    * @link for details, read more at https://tailwindcss.com/docs/vertical-align
    */
-  export let overflow: OverflowType = 'auto'
+  export let overflow: OverflowType = ''
   
   /**
    * @remark for setting overflow Y of an element
    * @link for details, read more at https://tailwindcss.com/docs/vertical-align
    */
-  export let overflowY: OverflowType = 'auto'
+  export let overflowY: OverflowType = ''
   
   /**
    * @remark for setting overflow X of an element
    * @link for details, read more at https://tailwindcss.com/docs/vertical-align
    */
-  export let overflowX: OverflowType = 'auto'
+  export let overflowX: OverflowType = ''
   
   /**
    * @remark for border color of an element, you can px if you want
@@ -257,25 +257,25 @@
    * @remark Flex direction, will work if display is flex
    * @link for details, read more at https://tailwindcss.com/docs/flex-direction
    */
-   export let flexDir:FlexDirectionType = 'row'
+   export let flexDir:FlexDirectionType = ''
   
    /**
    * @remark Flex Wrap, will work if display is flex
    * @link for details, read more at https://tailwindcss.com/docs/flex-direction
    */
-   export let flexWrap:FlexWrapType = 'nowrap'
+   export let flexWrap:FlexWrapType = ''
   
    /**
    * @remark Flex shortcut for flex Grow and flex Shrink, will work if display is flex
    * @link for details, read more at https://tailwindcss.com/docs/flex-direction
    */
-   export let flex:FlexType = 'auto'
+   export let flex:FlexType = ''
   
    /**
    * @remark Flex order, will work if display is flex
    * @link for details, read more at https://tailwindcss.com/docs/flex-order
    */
-   export let flexOrder:FlexOrderType = 'none'
+   export let flexOrder:FlexOrderType = ''
   
    /**
    * @remark Flex Justify content, will work if display is flex
@@ -370,9 +370,9 @@
   $: minHeight = minH && ( minH.includes('px') ? `min-h-[${minHeight}]` : `min-h-${minH}`)
   $: maxHeight = maxH && ( maxH.includes('px') ? `max-h-[${maxHeight}]` : `max-h-${maxH}`)
   $: verticalAligns = `align-${verticalAlign}`
-  $: flows = `overflow-${overflow}`
-  $: flowX = `overflow-x-${overflowX}`
-  $: flowY = `overflow-y-${overflowY}`
+  $: flows = overflow && `overflow-${overflow}`
+  $: flowX = overflowX && `overflow-x-${overflowX}`
+  $: flowY = overflowY && `overflow-y-${overflowY}`
   $: sizing = `${width} ${minWidth} ${maxWidth} ${height} ${minHeight} ${maxHeight} ${verticalAligns} ${flows} ${flowX} ${flowY}`
 
   // Border
