@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
   import type { SvelteComponentTyped } from "svelte"
   // import Icon and default loading icon
   import Icon, { Refresh } from 'svelte-hero-icons'
@@ -117,4 +117,4 @@
   .warning-text {
     @apply shadow-none bg-transparent border-0 text-warning-600 hover:bg-warning-200;
   }
-</style>
+</style> -->

@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { SvelteComponentTyped } from "svelte"
   import Icon, { InformationCircle, ExclamationCircle, CheckCircle, XCircle } from 'svelte-hero-icons'
+  import SwBox from './SwBox.svelte'
 
   type FilledType = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info'
   type OutlinedType = 'primary-outlined' | 'secondary-outlined' | 'success-outlined' | 'danger-outlined' | 'warning-outlined' | 'info-outlined'
@@ -53,6 +54,10 @@
   $: infoOutlined = type === 'info-outlined'
 </script>
 
+<SwBox role="alert" w="full" p="3" m="1" borderRadius="md">
+
+</SwBox>
+
 <div
   role="alert"
   class="w-full p-3 m-1 rounded-md shadow-lg flex {type}">
@@ -90,7 +95,7 @@
   </div>
 </div>
 
-<style>
+<!-- <style>
   .primary {
     @apply bg-primary-200 text-primary-600;
   }
@@ -127,4 +132,4 @@
   .warning-outlined {
     @apply ring-inset ring-2 ring-warning-200 text-warning-600;
   }
-</style>
+</style> -->
