@@ -13,11 +13,10 @@
     display="flex"
     justify="center"
     >
-      <SwBox borderRadius="lg" shadow="" p="4" bgColor="white" >
-
-        <h3 class="font-semibold text-2xl">How We Build Swind UI</h3>
-        First thing first
-      </SwBox>
+    <SwBox borderRadius="lg" shadow="lg" p="4" bgColor="white">
+      <h3 class="font-semibold text-2xl text-current">How We Build Swind UI</h3>
+      First thing first
+    </SwBox>
   </SwBox>
   <!-- <div class="w-56"> -->
     <!-- <SwAlert
