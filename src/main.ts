@@ -6,6 +6,7 @@ setup({
   theme: {
     extend: {
       colors: {
+        current: colors.blueGray[900],
         primary: {
           lightest: colors.blue[400],
           light: colors.blue[500],
@@ -96,6 +97,7 @@ setup({
 })
 
 import App from './App.svelte'
+import color from './constant/color'
 
 const app = new App({
   target: document.body
