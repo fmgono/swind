@@ -10,11 +10,11 @@
   type borderWidthType = '0' | '2' | '4' | '8' | (string & {})
   type borderRadiusType = 'none' |'sm' |'md' |'lg' |'xl' |'2xl' |'3xl' |'full' | (string & {})
   type DisplayType = 'block' | 'inline-block' | 'inline' | 'flex' | 'inline-flex' | 'table' | 'table-caption' | 'table-cell' | 'table-column' | 'table-column-group' | 'table-footer-group' | 'table-header-group' | 'table-row-group' | 'table-row' | 'flow-root' | 'grid' | 'inline-grid' | 'contents' | 'hidden' | (string & {})
-  type FlexDirectionType = 'row' | 'row-reverse' | 'col' | 'col-reverse'
-  type JustifyContentType = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly'
+  type FlexDirectionType = 'row' | 'row-reverse' | 'col' | 'col-reverse' | (string & {})
+  type justifyType = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly' | (string & {})
   type JustifyItemsType = 'auto' | 'start' | 'end' | 'center' | 'stretch'
   type AlignContentType = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly'
-  type AlignItemsType = 'start' | 'end' | 'center' | 'baseline' | 'stretch'
+  type alignType = 'start' | 'end' | 'center' | 'baseline' | 'stretch' | (string & {})
   type FlexWrapType = 'wrap' | 'wrap-reverse' | 'nowrap'
   type FlexType = '1' | 'auto' | 'initial' | 'none'
   type FlexGrowType = '0' | '' | (string & {})
@@ -219,6 +219,18 @@
    * @link for details, read more at https://tailwindcss.com/docs/display
    */
    export let flexDir:FlexDirectionType = 'row'
+  
+   /**
+   * @remark display type
+   * @link for details, read more at https://tailwindcss.com/docs/display
+   */
+   export let justify:justifyType = ''
+  
+   /**
+   * @remark display type
+   * @link for details, read more at https://tailwindcss.com/docs/display
+   */
+   export let align:alignType = ''
 
   // Spacing
   $: padding = p && (p.includes('px') ? `p-[${p}]` : `p-${p}`)
@@ -266,8 +278,13 @@
   $: borderBottomRadius = borderBottomRadius && ( borderBottomRadius.includes('px') ? `rounded-b-[${borderBottomRadius}]` : `rounded-b-${borderBottomRadius}`)
   $: borderLeftRadius = borderLeftRadius && ( borderLeftRadius.includes('px') ? `rounded-l-[${borderLeftRadius}]` : `rounded-l-${borderLeftRadius}`)
   $: borders = `${borderWidth} ${borderTopWidth} ${borderRightWidth} ${borderBottomWidth} ${borderLeftWidth} ${borderRadius} ${borderTopRadius} ${borderRightRadius} ${borderBottomRadius} ${borderLeftRadius} ${borderColor}`
+
+  // Flex
+  $: justify = (display === 'flex' || display === 'inline-flex') && `justify-${justify}`
+  $: align = (display === 'flex' || display === 'inline-flex') && `align-${align}`
+  $: flex = `${justify} ${align}`
 </script>
 
-<div class="{spacing} {textColor} {backgroundColor} {opacities} {sizing} {borders} {display}">
+<div {...$$restProps} class="{spacing} {textColor} {backgroundColor} {opacities} {sizing} {borders} {display} {flex}">
   <slot></slot>
 </div>
