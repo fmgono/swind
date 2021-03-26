@@ -118,12 +118,12 @@
   export let w:WidthHeightType = ''
   /**
    * @remark for setting min width of an element, you can px if you want
-   * @link for details, read more at https://tailwindcss.com/docs/width
+   * @link for details, read more at https://tailwindcss.com/docs/min-width
    */
   export let minW: minWidthType = ''
   /**
    * @remark for setting max width of an element, you can px if you want
-   * @link for details, read more at https://tailwindcss.com/docs/width
+   * @link for details, read more at https://tailwindcss.com/docs/max-width
    */
   export let maxW: maxWidthType = ''
   
@@ -134,12 +134,12 @@
   export let h:WidthHeightType = ''
   /**
    * @remark for setting min height of an element, you can px if you want
-   * @link for details, read more at https://tailwindcss.com/docs/height
+   * @link for details, read more at https://tailwindcss.com/docs/min-height
    */
   export let minH: minHeightType = ''
   /**
    * @remark for setting max height of an element, you can px if you want
-   * @link for details, read more at https://tailwindcss.com/docs/height
+   * @link for details, read more at https://tailwindcss.com/docs/max-height
    */
   export let maxH: maxHeightType = ''
   
@@ -148,6 +148,12 @@
    * @link for details, read more at https://tailwindcss.com/docs/border-color
    */
   export let borderColor: ColorType = ''
+  
+  /**
+   * @remark for border color of an element, you can px if you want
+   * @link for details, read more at https://tailwindcss.com/docs/border-opacity
+   */
+  export let borderOpacity: OpacityType = ''
   
   /**
    * @remark for border width of an element, you can px if you want
@@ -180,38 +186,38 @@
   export let borderLeftWidth: borderWidthType = ''
   
   /**
-   * @remark for border width of an element, you can px if you want
-   * @link for details, read more at https://tailwindcss.com/docs/border-width
+   * @remark for border radius of an element, you can px if you want
+   * @link for details, read more at https://tailwindcss.com/docs/border-radius
    */
   export let borderRadius: borderRadiusType = ''
   
   /**
-   * @remark for border width of an element, you can px if you want
-   * @link for details, read more at https://tailwindcss.com/docs/border-width
+   * @remark for top border radius of an element, you can px if you want
+   * @link for details, read more at https://tailwindcss.com/docs/border-radius
    */
   export let borderTopRadius: borderRadiusType = ''
   
   /**
-   * @remark for border width of an element, you can px if you want
-   * @link for details, read more at https://tailwindcss.com/docs/border-width
+   * @remark for right border radius of an element, you can px if you want
+   * @link for details, read more at https://tailwindcss.com/docs/border-radius
    */
   export let borderRightRadius: borderRadiusType = ''
   
   /**
-   * @remark for border width of an element, you can px if you want
-   * @link for details, read more at https://tailwindcss.com/docs/border-width
+   * @remark for bottom border radius of an element, you can px if you want
+   * @link for details, read more at https://tailwindcss.com/docs/border-radius
    */
   export let borderBottomRadius: borderRadiusType = ''
   
   /**
-   * @remark for border width of an element, you can px if you want
-   * @link for details, read more at https://tailwindcss.com/docs/border-width
+   * @remark for left border radius of an element, you can px if you want
+   * @link for details, read more at https://tailwindcss.com/docs/border-radius
    */
   export let borderLeftRadius: borderRadiusType = ''
   
   /**
-   * @remark for border width of an element, you can px if you want
-   * @link for details, read more at https://tailwindcss.com/docs/border-width
+   * @remark for box shadow of an element
+   * @link for details, read more at https://tailwindcss.com/docs/box-shadow
    */
   export let shadow: shadowType = ''
   
@@ -223,43 +229,63 @@
   
    /**
    * @remark display type
-   * @link for details, read more at https://tailwindcss.com/docs/display
+   * @link for details, read more at https://tailwindcss.com/docs/flex-direction
    */
    export let flexDir:FlexDirectionType = 'row'
   
    /**
    * @remark display type
-   * @link for details, read more at https://tailwindcss.com/docs/display
+   * @link for details, read more at https://tailwindcss.com/docs/flex-order
    */
    export let flexOrder:FlexOrderType = ''
   
    /**
    * @remark display type
-   * @link for details, read more at https://tailwindcss.com/docs/display
+   * @link for details, read more at https://tailwindcss.com/docs/justify-content
    */
    export let justify:justifyType = ''
   
    /**
    * @remark display type
-   * @link for details, read more at https://tailwindcss.com/docs/display
+   * @link for details, read more at https://tailwindcss.com/docs/align-items
    */
    export let align:alignType = ''
   
-   /**
-   * @remark display type
-   * @link for details, read more at https://tailwindcss.com/docs/display
-   */
    let className = ''
    let smClassName = ''
    let mdClassName = ''
    let lgClassName = ''
    let hoverClassName = ''
    let activeClassName = ''
+   /**
+   * @remark additional class if style props are not enough for you :)
+   * @link for details, read more at https://tailwindcss.com/docs
+   */
    export { className as class }
+   /**
+   * @remark additional class for small (mobile) breakpoint
+   * @link for details, read more at https://tailwindcss.com/docs
+   */
    export { smClassName as smClass }
+   /**
+   * @remark additional class for medium (tablet) breakpoint
+   * @link for details, read more at https://tailwindcss.com/docs
+   */
    export { mdClassName as mdClass }
+   /**
+   * @remark additional class for large (desktop) breakpoint
+   * @link for details, read more at https://tailwindcss.com/docs
+   */
    export { lgClassName as lgClass }
+   /**
+   * @remark additional class for hover state
+   * @link for details, read more at https://tailwindcss.com/docs
+   */
    export { hoverClassName as hoverClass }
+   /**
+   * @remark additional class for active state
+   * @link for details, read more at https://tailwindcss.com/docs
+   */
    export { activeClassName as activeClass }
 
   // Spacing
@@ -296,18 +322,19 @@
   $: sizing = `${width} ${minWidth} ${maxWidth} ${height} ${minHeight} ${maxHeight}`
 
   // Border
-  $: borderColor = borderColor && ( borderColor.includes('#') ? `border-[${borderColor}]` : `border-${borderColor}`)
   $: borderWidth = borderWidth && ( borderWidth.includes('px') ? `border-[${borderWidth}]` : `border-${borderWidth}`)
-  $: borderTopWidth = borderTopWidth && ( borderTopWidth.includes('px') ? `border-t-[${borderTopWidth}]` : `border-t-${borderTopWidth}`)
-  $: borderRightWidth = borderRightWidth && ( borderRightWidth.includes('px') ? `border-r-[${borderRightWidth}]` : `border-r-${borderRightWidth}`)
-  $: borderBottomWidth = borderBottomWidth && ( borderBottomWidth.includes('px') ? `border-b-[${borderBottomWidth}]` : `border-b-${borderBottomWidth}`)
-  $: borderLeftWidth = borderLeftWidth && ( borderLeftWidth.includes('px') ? `border-l-[${borderLeftWidth}]` : `border-l-${borderLeftWidth}`)
+  $: borderColor = borderWidth && borderColor && ( borderColor.includes('#') ? `border-[${borderColor}]` : `border-${borderColor}`)
+  $: borderOpacity = borderWidth && borderOpacity && ( borderOpacity.includes('#') ? `border-opacity-[${borderOpacity}]` : `border-opacity-${borderOpacity}`)
+  $: borderTopWidth = borderWidth && borderTopWidth && ( borderTopWidth.includes('px') ? `border-t-[${borderTopWidth}]` : `border-t-${borderTopWidth}`)
+  $: borderRightWidth = borderWidth && borderRightWidth && ( borderRightWidth.includes('px') ? `border-r-[${borderRightWidth}]` : `border-r-${borderRightWidth}`)
+  $: borderBottomWidth = borderWidth && borderBottomWidth && ( borderBottomWidth.includes('px') ? `border-b-[${borderBottomWidth}]` : `border-b-${borderBottomWidth}`)
+  $: borderLeftWidth = borderWidth && borderLeftWidth && ( borderLeftWidth.includes('px') ? `border-l-[${borderLeftWidth}]` : `border-l-${borderLeftWidth}`)
   $: borderRadius = borderRadius && ( borderRadius.includes('px') ? `rounded-[${borderRadius}]` : `rounded-${borderRadius}`)
   $: borderTopRadius = borderTopRadius && ( borderTopRadius.includes('px') ? `rounded-t-[${borderTopRadius}]` : `rounded-t-${borderTopRadius}`)
   $: borderRightRadius = borderRightRadius && ( borderRightRadius.includes('px') ? `rounded-r-[${borderRightRadius}]` : `rounded-r-${borderRightRadius}`)
   $: borderBottomRadius = borderBottomRadius && ( borderBottomRadius.includes('px') ? `rounded-b-[${borderBottomRadius}]` : `rounded-b-${borderBottomRadius}`)
   $: borderLeftRadius = borderLeftRadius && ( borderLeftRadius.includes('px') ? `rounded-l-[${borderLeftRadius}]` : `rounded-l-${borderLeftRadius}`)
-  $: borders = `${borderWidth} ${borderTopWidth} ${borderRightWidth} ${borderBottomWidth} ${borderLeftWidth} ${borderRadius} ${borderTopRadius} ${borderRightRadius} ${borderBottomRadius} ${borderLeftRadius} ${borderColor}`
+  $: borders = `${borderWidth} ${borderTopWidth} ${borderRightWidth} ${borderBottomWidth} ${borderLeftWidth} ${borderRadius} ${borderTopRadius} ${borderRightRadius} ${borderBottomRadius} ${borderLeftRadius} ${borderColor} ${borderOpacity}`
 
   // Shadow
   $: boxShadow = shadow && `shadow-${shadow}`
