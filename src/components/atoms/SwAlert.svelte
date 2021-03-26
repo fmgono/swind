@@ -54,8 +54,11 @@
   $: infoOutlined = type === 'info-outlined'
 </script>
 
-<SwBox role="alert" w="full" p="3" m="1" borderRadius="md">
+<SwBox role="alert" w="full" p="3" m="1" borderRadius="md" shadow="lg" display="flex">
+  <SwBox minH="screen" w="1" borderRadius="lg" mr="2" bgColor="blue" />
+  <SwBox display="flex" align="center">
 
+  </SwBox>
 </SwBox>
 
 <div

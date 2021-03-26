@@ -1,5 +1,5 @@
 <script lang="ts">
-  // import { Check } from 'svelte-hero-icons'
+  import Icon, { Check } from 'svelte-hero-icons'
   // import SwAlert from './components/atoms/SwAlert.svelte'
   import SwBox from './components/atoms/SwBox.svelte'
   // import SwButton from './components/atoms/SwButton.svelte'
@@ -8,14 +8,43 @@
 <main class="bg-gray-100 min-h-screen">
   <div class="">Box Component</div>
 
+  <SwBox w="3/12" role="alert" p="3" m="1" borderRadius="md" shadow="lg" display="flex" bgColor="white">
+    <SwBox w="1" borderRadius="lg" mr="2" bgColor="blue" />
+    <SwBox display="flex" align="center">
+      <Icon src="{Check}" size="24" />
+      <SwBox ml="2" color="gray-dark">
+        <div class="font-semibold">
+          Success
+        </div>
+        <span class="text-sm">
+          Bismillah
+        </span>
+      </SwBox>
+    </SwBox>
+  </SwBox>
+
   <div class="text-base font-semibold text-primary-light">Box Component</div>
   <SwBox
     display="flex"
     justify="center"
     >
-    <SwBox borderRadius="lg" shadow="lg" p="4" bgColor="white">
+    <!-- <SwBox borderRadius="lg" shadow="lg" p="4" bgColor="white">
       <h3 class="font-semibold text-2xl text-current">How We Build Swind UI</h3>
       First thing first
+    </SwBox> -->
+    <SwBox role="alert" p="3" m="1" borderRadius="md" shadow="lg" display="flex">
+      <SwBox minH="screen" w="1" borderRadius="lg" mr="2" bgColor="blue" />
+      <SwBox display="flex" align="center">
+        <Icon src="{Check}" size="24" />
+        <SwBox ml="2" color="gray-dark">
+          <div class="font-semibold">
+            Success
+          </div>
+          <span class="text-sm">
+            Bismillah
+          </span>
+        </SwBox>
+      </SwBox>
     </SwBox>
   </SwBox>
   <!-- <div class="w-56"> -->
