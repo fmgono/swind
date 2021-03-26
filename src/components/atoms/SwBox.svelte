@@ -19,7 +19,7 @@
   type FlexType = '1' | 'auto' | 'initial' | 'none'
   type FlexGrowType = '0' | '' | (string & {})
   type FlexShrinkType = '0' | '' | (string & {})
-  type FlexOrderType = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | 'first' | 'last' | 'none'
+  type FlexOrderType = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | 'first' | 'last' | 'none' | (string & {})
   
   /**
    * @remark if you select the value is 1, then it will generated string class tailwind .m-1
@@ -224,6 +224,12 @@
    * @remark display type
    * @link for details, read more at https://tailwindcss.com/docs/display
    */
+   export let flexOrder:FlexOrderType = ''
+  
+   /**
+   * @remark display type
+   * @link for details, read more at https://tailwindcss.com/docs/display
+   */
    export let justify:justifyType = ''
   
    /**
@@ -231,6 +237,23 @@
    * @link for details, read more at https://tailwindcss.com/docs/display
    */
    export let align:alignType = ''
+  
+   /**
+   * @remark display type
+   * @link for details, read more at https://tailwindcss.com/docs/display
+   */
+   let className = ''
+   let smClassName = ''
+   let mdClassName = ''
+   let lgClassName = ''
+   let hoverClassName = ''
+   let activeClassName = ''
+   export { className as class }
+   export { smClassName as smClass }
+   export { mdClassName as mdClass }
+   export { lgClassName as lgClass }
+   export { hoverClassName as hoverClass }
+   export { activeClassName as activeClass }
 
   // Spacing
   $: padding = p && (p.includes('px') ? `p-[${p}]` : `p-${p}`)
@@ -282,9 +305,20 @@
   // Flex
   $: justify = (display === 'flex' || display === 'inline-flex') && `justify-${justify}`
   $: align = (display === 'flex' || display === 'inline-flex') && `align-${align}`
-  $: flex = `${justify} ${align}`
+  $: direction = (display === 'flex' || display === 'inline-flex') && `flex-${align}`
+  $: order = (display === 'flex' || display === 'inline-flex') && `order--${align}`
+  $: flex = ` ${direction} ${order} ${justify} ${align}`
+
+  // Advanced style with class
+  $: className = className && className
+  $: smClassName = smClassName && ``
+  $: mdClassName = mdClassName && mdClassName
+  $: lgClassName = lgClassName && lgClassName
+  $: hoverClassName = hoverClassName && hoverClassName
+  $: activeClassName = activeClassName && activeClassName
+  $: classes = `${smClassName} ${className} ${mdClassName} ${lgClassName} ${hoverClassName} ${activeClassName}`
 </script>
 
-<div {...$$restProps} class="{spacing} {textColor} {backgroundColor} {opacities} {sizing} {borders} {display} {flex}">
+<div {...$$restProps} class="{spacing} {textColor} {backgroundColor} {opacities} {sizing} {borders} {display} {flex} {classes}">
   <slot></slot>
 </div>
