@@ -13,14 +13,14 @@
   type DisplayType = 'block' | 'inline-block' | 'inline' | 'flex' | 'inline-flex' | 'table' | 'table-caption' | 'table-cell' | 'table-column' | 'table-column-group' | 'table-footer-group' | 'table-header-group' | 'table-row-group' | 'table-row' | 'flow-root' | 'grid' | 'inline-grid' | 'contents' | 'hidden' | (string & {})
   type FlexDirectionType = 'row' | 'row-reverse' | 'col' | 'col-reverse' | (string & {})
   type justifyType = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly' | (string & {})
-  type JustifyItemsType = 'auto' | 'start' | 'end' | 'center' | 'stretch'
-  type AlignContentType = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly'
+  type JustifyItemsType = 'auto' | 'start' | 'end' | 'center' | 'stretch' | (string & {})
+  type AlignContentType = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly' | (string & {})
   type alignType = 'start' | 'end' | 'center' | 'baseline' | 'stretch' | (string & {})
   type FlexWrapType = 'wrap' | 'wrap-reverse' | 'nowrap'
   type FlexType = '1' | 'auto' | 'initial' | 'none'
-  type FlexGrowType = '0' | '' | (string & {})
-  type FlexShrinkType = '0' | '' | (string & {})
-  type FlexOrderType = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | 'first' | 'last' | 'none' | (string & {})
+  // type FlexGrowType = '0' | '' | (string & {})
+  // type FlexShrinkType = '0' | '' | (string & {})
+  type FlexOrderType = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | 'first' | 'last' | 'none'
   
   /**
    * @remark if you select the value is 1, then it will generated string class tailwind .m-1
@@ -228,28 +228,52 @@
    export let display:DisplayType = 'block'
   
    /**
-   * @remark display type
+   * @remark Flex direction, will work if display is flex
    * @link for details, read more at https://tailwindcss.com/docs/flex-direction
    */
    export let flexDir:FlexDirectionType = 'row'
   
    /**
-   * @remark display type
-   * @link for details, read more at https://tailwindcss.com/docs/flex-order
+   * @remark Flex Wrap, will work if display is flex
+   * @link for details, read more at https://tailwindcss.com/docs/flex-direction
    */
-   export let flexOrder:FlexOrderType = ''
+   export let flexWrap:FlexWrapType = 'nowrap'
   
    /**
-   * @remark display type
+   * @remark Flex shortcut for flex Grow and flex Shrink, will work if display is flex
+   * @link for details, read more at https://tailwindcss.com/docs/flex-direction
+   */
+   export let flex:FlexType = 'auto'
+  
+   /**
+   * @remark Flex order, will work if display is flex
+   * @link for details, read more at https://tailwindcss.com/docs/flex-order
+   */
+   export let flexOrder:FlexOrderType = 'none'
+  
+   /**
+   * @remark Flex Justify content, will work if display is flex
    * @link for details, read more at https://tailwindcss.com/docs/justify-content
    */
    export let justify:justifyType = ''
   
    /**
-   * @remark display type
+   * @remark Flex Justify items, will work if display is flex
+   * @link for details, read more at https://tailwindcss.com/docs/justify-items
+   */
+   export let justifyItems:JustifyItemsType = 'auto'
+  
+   /**
+   * @remark Flex align items, will work if display is flex
    * @link for details, read more at https://tailwindcss.com/docs/align-items
    */
    export let align:alignType = ''
+  
+   /**
+   * @remark Flex align item, will work if display is flex
+   * @link for details, read more at https://tailwindcss.com/docs/align-content
+   */
+   export let alignContent:AlignContentType = 'start'
   
    let className = ''
    let smClassName = ''
@@ -340,11 +364,15 @@
   $: boxShadow = shadow && `shadow-${shadow}`
 
   // Flex
+  $: direction = (display === 'flex' || display === 'inline-flex') && `flex-${flexDir}`
+  $: wrap = (display === 'flex' || display === 'inline-flex') && `flex-${flexWrap}`
+  $: growShrink = (display === 'flex' || display === 'inline-flex') && `flex-${flex}`
+  $: order = (display === 'flex' || display === 'inline-flex') && `order-${flexOrder}`
   $: justify = (display === 'flex' || display === 'inline-flex') && `justify-${justify}`
-  $: align = (display === 'flex' || display === 'inline-flex') && `align-${align}`
-  $: direction = (display === 'flex' || display === 'inline-flex') && `flex-${align}`
-  $: order = (display === 'flex' || display === 'inline-flex') && `order--${align}`
-  $: flex = ` ${direction} ${order} ${justify} ${align}`
+  $: justifyItems = (display === 'flex' || display === 'inline-flex') && `justify-items-${justify}`
+  $: align = (display === 'flex' || display === 'inline-flex') && `items-${align}`
+  $: alignContent = (display === 'flex' || display === 'inline-flex') && `content-${alignContent}`
+  $: flexs = `${direction} ${wrap} ${growShrink} ${order} ${justify} ${justifyItems} ${align} ${alignContent}`
 
   // Advanced style with class
   $: className = className && className
@@ -356,6 +384,6 @@
   $: classes = `${smClassName} ${className} ${mdClassName} ${lgClassName} ${hoverClassName} ${activeClassName}`
 </script>
 
-<div {...$$restProps} class="{spacing} {textColor} {backgroundColor} {opacities} {sizing} {borders} {boxShadow} {display} {flex} {classes}">
+<div {...$$restProps} class="{spacing} {textColor} {backgroundColor} {opacities} {sizing} {borders} {boxShadow} {display} {flexs} {classes}">
   <slot></slot>
 </div>
