@@ -55,9 +55,6 @@
     <Icon src="{icon}" solid size="24" />
     {/if}
     <SwBox ml="3" color="current" display="flex" flexDir={direction} align={align}>
-      <!-- <div class="font-semibold">
-        { message }
-      </div> -->
       <SwText weight="semibold" > { message} </SwText>
       <SwText size="sm" class="{variant === 'horizontal' && 'ml-3'}"> { description} </SwText>
     </SwBox>
