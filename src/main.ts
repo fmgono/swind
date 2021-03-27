@@ -4,9 +4,30 @@ import { setup  } from 'twind/shim'
 
 setup({
   theme: {
+    colors: {
+      transparent: 'transparent',
+      current: '#2d3748',
+      black: colors.black,
+      white: colors.white,
+      blue: colors.blue,
+      primary: colors.blue,
+      indigo: colors.indigo,
+      secondary: colors.indigo,
+      green: colors.green,
+      success: colors.green,
+      red: colors.red,
+      danger: colors.red,
+      'light-blue': colors.lightBlue,
+      info: colors.lightBlue,
+      purple: colors.purple,
+      yellow: colors.yellow,
+      warning: colors.yellow,
+      orange: colors.orange,
+      gray: colors.gray,
+    },
     extend: {
       colors: {
-        current: colors.blueGray[900],
+        current: '#2d3748',
         primary: {
           lightest: colors.blue[400],
           light: colors.blue[500],
@@ -32,10 +53,10 @@ setup({
           dark: colors.red[900],
         },
         info: {
-          lightest: colors.purple[400],
-          light: colors.purple[500],
-          DEFAULT: colors.purple[700],
-          dark: colors.purple[900],
+          lightest: colors.lightBlue[400],
+          light: colors.lightBlue[500],
+          DEFAULT: colors.lightBlue[700],
+          dark: colors.lightBlue[900],
         },
         warning: {
           lightest: colors.yellow[400],
