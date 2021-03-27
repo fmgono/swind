@@ -185,61 +185,61 @@
    * @remark for border width of an element, you can px if you want
    * @link for details, read more at https://tailwindcss.com/docs/border-width
    */
-  export let borderWidth: borderWidthType = ''
+  export let border: borderWidthType = ''
   
   /**
    * @remark for border width of an element, you can px if you want
    * @link for details, read more at https://tailwindcss.com/docs/border-width
    */
-  export let borderTopWidth: borderWidthType = ''
+  export let borderTop: borderWidthType = ''
   
   /**
    * @remark for border width of an element, you can px if you want
    * @link for details, read more at https://tailwindcss.com/docs/border-width
    */
-  export let borderRightWidth: borderWidthType = ''
+  export let borderRight: borderWidthType = ''
   
   /**
    * @remark for border width of an element, you can px if you want
    * @link for details, read more at https://tailwindcss.com/docs/border-width
    */
-  export let borderBottomWidth: borderWidthType = ''
+  export let borderBottom: borderWidthType = ''
   
   /**
    * @remark for border width of an element, you can px if you want
    * @link for details, read more at https://tailwindcss.com/docs/border-width
    */
-  export let borderLeftWidth: borderWidthType = ''
+  export let borderLeft: borderWidthType = ''
   
   /**
    * @remark for border radius of an element, you can px if you want
    * @link for details, read more at https://tailwindcss.com/docs/border-radius
    */
-  export let borderRadius: borderRadiusType = ''
+  export let rounded: borderRadiusType = ''
   
   /**
    * @remark for top border radius of an element, you can px if you want
    * @link for details, read more at https://tailwindcss.com/docs/border-radius
    */
-  export let borderTopRadius: borderRadiusType = ''
+  export let roundedTop: borderRadiusType = ''
   
   /**
    * @remark for right border radius of an element, you can px if you want
    * @link for details, read more at https://tailwindcss.com/docs/border-radius
    */
-  export let borderRightRadius: borderRadiusType = ''
+  export let roundedRight: borderRadiusType = ''
   
   /**
    * @remark for bottom border radius of an element, you can px if you want
    * @link for details, read more at https://tailwindcss.com/docs/border-radius
    */
-  export let borderBottomRadius: borderRadiusType = ''
+  export let roundedBottom: borderRadiusType = ''
   
   /**
    * @remark for left border radius of an element, you can px if you want
    * @link for details, read more at https://tailwindcss.com/docs/border-radius
    */
-  export let borderLeftRadius: borderRadiusType = ''
+  export let roundedLeft: borderRadiusType = ''
   
   /**
    * @remark for box shadow of an element
@@ -376,19 +376,19 @@
   $: sizing = `${width} ${minWidth} ${maxWidth} ${height} ${minHeight} ${maxHeight} ${verticalAligns} ${flows} ${flowX} ${flowY}`
 
   // Border
-  $: borderWidth = borderWidth && ( borderWidth.includes('px') ? `border-[${borderWidth}]` : `border-${borderWidth}`)
-  $: borderColor = borderWidth && borderColor && ( borderColor.includes('#') ? `border-[${borderColor}]` : `border-${borderColor}`)
-  $: borderOpacity = borderWidth && borderOpacity && ( borderOpacity.includes('#') ? `border-opacity-[${borderOpacity}]` : `border-opacity-${borderOpacity}`)
-  $: borderTopWidth = borderWidth && borderTopWidth && ( borderTopWidth.includes('px') ? `border-t-[${borderTopWidth}]` : `border-t-${borderTopWidth}`)
-  $: borderRightWidth = borderWidth && borderRightWidth && ( borderRightWidth.includes('px') ? `border-r-[${borderRightWidth}]` : `border-r-${borderRightWidth}`)
-  $: borderBottomWidth = borderWidth && borderBottomWidth && ( borderBottomWidth.includes('px') ? `border-b-[${borderBottomWidth}]` : `border-b-${borderBottomWidth}`)
-  $: borderLeftWidth = borderWidth && borderLeftWidth && ( borderLeftWidth.includes('px') ? `border-l-[${borderLeftWidth}]` : `border-l-${borderLeftWidth}`)
-  $: borderRadius = borderRadius && ( borderRadius.includes('px') ? `rounded-[${borderRadius}]` : `rounded-${borderRadius}`)
-  $: borderTopRadius = borderTopRadius && ( borderTopRadius.includes('px') ? `rounded-t-[${borderTopRadius}]` : `rounded-t-${borderTopRadius}`)
-  $: borderRightRadius = borderRightRadius && ( borderRightRadius.includes('px') ? `rounded-r-[${borderRightRadius}]` : `rounded-r-${borderRightRadius}`)
-  $: borderBottomRadius = borderBottomRadius && ( borderBottomRadius.includes('px') ? `rounded-b-[${borderBottomRadius}]` : `rounded-b-${borderBottomRadius}`)
-  $: borderLeftRadius = borderLeftRadius && ( borderLeftRadius.includes('px') ? `rounded-l-[${borderLeftRadius}]` : `rounded-l-${borderLeftRadius}`)
-  $: borders = `${borderWidth} ${borderTopWidth} ${borderRightWidth} ${borderBottomWidth} ${borderLeftWidth} ${borderRadius} ${borderTopRadius} ${borderRightRadius} ${borderBottomRadius} ${borderLeftRadius} ${borderColor} ${borderOpacity}`
+  $: border = border && ( border.includes('px') ? `border-[${border}]` : `border-${border}`)
+  $: borderColor = border && borderColor && ( borderColor.includes('#') ? `border-[${borderColor}]` : `border-${borderColor}`)
+  $: borderOpacity = border && borderOpacity && ( borderOpacity.includes('#') ? `border-opacity-[${borderOpacity}]` : `border-opacity-${borderOpacity}`)
+  $: borderTop = border && borderTop && ( borderTop.includes('px') ? `border-t-[${borderTop}]` : `border-t-${borderTop}`)
+  $: borderRight = border && borderRight && ( borderRight.includes('px') ? `border-r-[${borderRight}]` : `border-r-${borderRight}`)
+  $: borderBottom = border && borderBottom && ( borderBottom.includes('px') ? `border-b-[${borderBottom}]` : `border-b-${borderBottom}`)
+  $: borderLeft = border && borderLeft && ( borderLeft.includes('px') ? `border-l-[${borderLeft}]` : `border-l-${borderLeft}`)
+  $: rounded = rounded && ( rounded.includes('px') ? `rounded-[${rounded}]` : `rounded-${rounded}`)
+  $: roundedTop = roundedTop && ( roundedTop.includes('px') ? `rounded-t-[${roundedTop}]` : `rounded-t-${roundedTop}`)
+  $: roundedRight = roundedRight && ( roundedRight.includes('px') ? `rounded-r-[${roundedRight}]` : `rounded-r-${roundedRight}`)
+  $: roundedBottom = roundedBottom && ( roundedBottom.includes('px') ? `rounded-b-[${roundedBottom}]` : `rounded-b-${roundedBottom}`)
+  $: roundedLeft = roundedLeft && ( roundedLeft.includes('px') ? `rounded-l-[${roundedLeft}]` : `rounded-l-${roundedLeft}`)
+  $: borderStyle = `${border} ${borderTop} ${borderRight} ${borderBottom} ${borderLeft} ${rounded} ${roundedTop} ${roundedRight} ${roundedBottom} ${roundedLeft} ${borderColor} ${borderOpacity}`
 
   // Shadow
   $: boxShadow = shadow && `shadow-${shadow}`
@@ -414,6 +414,6 @@
   $: classes = `${smClassName} ${className} ${mdClassName} ${lgClassName} ${hoverClassName} ${activeClassName}`
 </script>
 
-<div {...$$restProps} class="{spacing} {textColor} {backgroundColor} {opacities} {sizing} {borders} {boxShadow} {display} {flexs} {classes}">
+<div {...$$restProps} class="{spacing} {textColor} {backgroundColor} {opacities} {sizing} {borderStyle} {boxShadow} {display} {flexs} {classes}">
   <slot></slot>
 </div>
