@@ -1,7 +1,6 @@
 <script lang="ts">
   import Icon, { InformationCircle, ExclamationCircle, CheckCircle, XCircle } from 'svelte-hero-icons'
-  import SwBox from './SwBox.svelte'
-  import SwText from './SwText.svelte'
+  import { SwBox, SwText } from '@/components/atoms'
 
   type Type = 'success' | 'danger' | 'warning' | 'info'
   type VariantType = 'vertical' | 'horizontal'
