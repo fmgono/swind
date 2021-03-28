@@ -14,7 +14,7 @@
   type WordBreakType = '' | 'normal' | 'words' | 'all'
   
   export let size: FontSizeType = ''
-  export let italic: boolean = false
+  export let italic: boolean | (string & {}) = ''
   export let weight: FontWeightType = ''
   export let spacing: LetterSpacingType = ''
   export let leading: LineHeightType = ''
@@ -80,9 +80,9 @@
   $: textDecoration = decoration && decoration
   $: textTransform = transform && transform
   $: textOverflow = overflow && overflow
-  $: verticalAligns = `align-${verticalAlign}`
-  $: whiteSpace = `whitespace-${whitespace}`
-  $: wordbreak = `break-${wordBreak}`
+  $: verticalAligns = verticalAlign && `align-${verticalAlign}`
+  $: whiteSpace = whitespace && `whitespace-${whitespace}`
+  $: wordbreak = wordBreak && `break-${wordBreak}`
 
   // Advanced style with class
   $: className = className && className
