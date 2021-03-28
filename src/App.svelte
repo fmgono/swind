@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Icon, { CheckCircle } from 'svelte-hero-icons'
-  import SwAlert from './components/atoms/SwAlert.svelte'
-  import SwBox from './components/atoms/SwBox.svelte'
+  // import Icon, { CheckCircle } from 'svelte-hero-icons'
+  import SwAlert from '@/components/molecules/SwAlert.svelte'
+  // import SwBox from '@/components/atoms/SwBox.svelte'
   // import SwButton from './components/atoms/SwButton.svelte'
 </script>
 
